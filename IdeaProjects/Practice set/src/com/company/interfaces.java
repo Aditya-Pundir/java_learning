@@ -1,15 +1,23 @@
 package com.company;
 
 interface Bicycle{
-    int a = 45;
+
+    // There's no need to declare the methods public because they are already public.
     void applyBrake(int decrement);
     void speedUp(int increment);
 }
+
 interface hornBicycle{
+    public int a = 45;
     void blowHornabcd();
     void blowHornefgh();
 }
+
 class AvonCycle implements Bicycle, hornBicycle{
+
+//    You can override a value in the sub class:
+//    public int a = 5;
+
     void blowHorn(){
         System.out.println("Pee Pee Poo Poo");
     }
