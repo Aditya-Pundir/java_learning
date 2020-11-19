@@ -3,9 +3,17 @@ package com.company;
 interface camera{
     void takeSnap();
     void recordVideo();
+    private void greet(){
+        System.out.println("Good Morning!");
+    }
+    // If we make a private method in an interface, we can't use it in the classes that are implementing it.
+
+    //Q. So, what is the use of private method if we can't use it in the classes that are implementing it?
+    //Ans. If the logic that we have written in our default method is very big so we can put it in our private method and call that method in our default method.
 
     // Creating a default method in an interface:
     default void record4KVideo(){
+        greet();
         System.out.println("Recording 4K video...\n");
     }
 }
@@ -36,10 +44,10 @@ class mySmartPhone extends myCellPhone implements Wifi, camera{
     }
 
      // You can easily override a default method as shown below:
-    @Override
-    public void record4KVideo(){
-        System.out.println("Recording 4K Video by iphone 12 pro max...");
-    }
+//    @Override
+//    public void record4KVideo(){
+//        System.out.println("Taking snap and recording 4K Video by iphone 12 pro max...");
+//    }
 
     @Override
     public String[] getNetworks() {
@@ -58,6 +66,7 @@ public class Default_Methods {
 
         mySmartPhone ms = new mySmartPhone();
         ms.record4KVideo();
+//        ms.greet(); // ——> Throws an error.
         String[] arr = ms.getNetworks();
         for (String item:arr) {
             System.out.println(item);
