@@ -1,0 +1,7 @@
+
+To compile a file ——> javac file_name.java
+To interprete a file ——> java file_name.class or only java file_name
+To move all files to their corresponding packages ——> javac -d . *.java
+To move a file to its corresponding package ——> javac -d . file_name.java
+To move all files to their corresponding packages in a folder by creating that folder ——> javac -d folder_name *.java
+To move a file to its corresponding package in a folder by creating that folder ——> javac -d folder_name file_name.java
